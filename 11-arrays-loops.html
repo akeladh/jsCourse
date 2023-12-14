@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays and Loops</title>
+    <style>
+   
+    </style>
+  </head>
+  <body>
+    <script>
+      //arrays
+      const myArray = [10, 20, 30];
+      console.log(myArray);
+
+      console.log(myArray[1]);
+
+      myArray[0] = 99;
+      console.log(myArray);
+
+      [1, 'hello', true, {name: 'socks'}, [1,2]]
+
+      console.log(typeof [1,2]);
+      console.log(Array.isArray([1,2]));
+
+      console.log(myArray.length);
+
+      myArray.push(100);
+      console.log(myArray);
+
+      myArray.splice(0,2)
+      console.log(myArray);      
+
+
+      //loops
+      let i = 1;
+
+      while(i <= 5){
+        console.log(i);
+        i++;
+      }
+
+      for (let i=1; i <=5; i++){
+        console.log('for ' +i);
+      }
+
+
+      //nonstard loop ex
+      let randomNumber = 0;
+
+      while(randomNumber < 0.5){
+        randomNumber = Math.random();
+      }
+      console.log(randomNumber);
+
+
+      //looping through an array
+      const todoList = [
+        'make dinner', 
+        'wash dishes', 
+        'watch youtube' ]
+
+      for (let index = 0; index <= todoList.length-1; index++){
+        console.log(todoList[index]);
+      }
+
+      //
+      //accumlator pattern - calc total
+      const  nums = [1,1,3]
+      let total = 0;
+
+      for (let i = 0; i < nums.length; i++){
+        const num = nums[i];
+        total += num;
+      }
+      console.log(total);
+
+
+      //accumlator pattern - double each num
+      const numsDoubled = [];
+      for (let i = 0; i < nums.length; i++){
+        const num = nums[i]*2
+        numsDoubled.push(num);
+      }
+      console.log(numsDoubled);
+
+      //arrays are references
+      const array1 = [1,2,3];
+      const array2 = array1;
+      array2.push(4);
+      console.log('array1: ' + array1);
+      console.log('array2: '+ array2);
+
+      const array3 = array1.slice();
+      array3.push(5);
+      console.log('array1: ' + array1);
+      console.log('array3: '+ array3);
+
+
+      //destructing in arrays
+      const [firstVal, secondVal, ] = [1,2,3];
+
+
+      //more dets 
+      //break and cont
+      for (let i=1; i <=10; i++){
+        if(i%3 === 0){
+          continue
+        }
+        console.log(i);
+        if(i === 8){
+          break;
+        }
+      }
+
+      let y = 1;
+      while (y <=10){
+        if(y % 3 === 0){
+          y++;
+          continue;
+        }
+        console.log('y: ' + y);
+        y++;
+      }
+
+      //function with loops
+      function doubleArray(nums2){
+      const numsDoubled2 = [];
+      for (let i = 0; i < nums2.length; i++){
+        const num = nums2[i]
+        if (num === 0){
+          return numsDoubled2;
+        }
+
+        numsDoubled2.push(num*2);
+      }
+      return numsDoubled2;
+    }
+    console.log(doubleArray([1,2,5]));
+    console.log(doubleArray([2,3,5,0,5]));
+    </script>
+  </body>
+</html>

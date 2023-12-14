@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Functions</title>
+  </head>
+  <body>
+    <button onclick="" class="js-button">click</button>
+
+    <script> 
+    /*
+    const buttonElement = document.querySelector('.js-button');
+
+    const eventListener = ()=>{
+      console.log('click button 1')
+    };
+
+    buttonElement.addEventListener('click', eventListener );
+
+    buttonElement.removeEventListener('click', eventListener);
+
+
+    buttonElement.addEventListener('click', ()=>{
+      console.log('click button 2')
+    });
+ */
+
+    /*
+      function greeting(){
+        console.log('hello');
+      }
+      greeting();
+
+
+      const num = 2;
+      const function1 = function(){
+        console.log('hello 2')
+      };      
+      console.log(function1);
+      console.log(typeof function1);
+      function1();
+
+
+      const object1 = {
+        num: 2,
+        fun: function(){
+          console.log('hello3');
+        }
+      };
+      object1.fun();
+
+
+      function display(param){
+        console.log(param);
+      }
+      display(2);
+
+      //passing a funct into another funct
+      function run(param){
+        param();
+      }
+      run(function(){
+        console.log('hello4') //callback
+      })
+
+      setTimeout(function(){
+        console.log('timeout');
+        console.log('timeout2');
+      }, 3000);
+      console.log('next line');
+
+      setInterval(function(){
+        console.log('interval')
+      }, 3000);
+      console.log('next line 2');
+      
+
+      //forEach
+      [
+        'make dinner',
+        'wash dishes',
+        'watch youtube' 
+      ].forEach(function(value, index){
+        if (value === 'wash dishes'){
+          return;
+        }
+        console.log(index);
+        console.log(value);
+      });
+
+
+      //arrowFunctions
+      const arrowFunction = (param, param2) => {
+        console.log('hello'); 
+        return 5;
+      }
+      arrowFunction();
+
+      const regFunction = function (param, param2) {
+        console.log('reg hello');
+        return 5;
+      }
+      regFunction();
+
+      const oneParam = param =>{
+        console.log(param + 1);
+      } 
+      oneParam(2); 
+
+      const oneLine = () => 2+3;
+      console.log(oneLine()) ;
+
+      [
+        'make dinner',
+        'wash dishes',
+        'watch youtube' 
+      ].forEach((value, index) =>{
+        if (value === 'wash dishes'){
+          return;
+        }
+        console.log(index);
+        console.log(value);
+      });
+      */
+
+
+      //filter & map
+      console.log([1, -3, 5].filter((value, index)=>{
+        // if (value >= 0){
+        //   return true;
+        // }else{
+        //   return false;
+        // }
+        return value >= 0;
+      }))
+
+      console.log([1,1,3].map((value, index) =>{
+        return value*2;
+      }));
+
+      //shortcuts of arrow functions
+      console.log([1,1,3].map(value => value * 3));
+    </script>
+  </body>
+</html>

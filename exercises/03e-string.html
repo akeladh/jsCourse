@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3e - Strings</title>
+  </head>
+  <body>
+    <script>
+      //3a
+      nameString = 'My name is: '
+      console.log(nameString)
+      //3b
+      name = "Akela"
+      console.log(name)
+      //3c
+      concat = nameString + name
+      console.log(concat)
+      //3d
+      cost = 5 + 3
+      console.log("Total cost: $"+cost)
+      //3e
+      console.log(`Total cost: $${5+3}`)
+      //3f
+      alert("Total cost: $"+cost)
+      //3g
+      console.log("Total cost: $"+(599+295)/100)
+      //3h
+      console.log(`Total cost: $${(599+295)/100}`)
+      //3i
+      alert(`Total cost: $${(599+295)/100}`)
+      //3j
+      alert(`Total cost: $${(599+295)/100}
+      Thank you, come again!`)
+      //3k
+      amazonCost = (2*2095 + 2*799)/100
+      console.log(`Items${4}: $${amazonCost}`)
+      //3l
+      amazonTotal = (2*499)/100
+      console.log(`Shipping & handling: $${amazonTotal}`)
+      //3m
+      amazonTotalBeforeTax = amazonCost + amazonTotal
+      console.log(`Total before tax: $${amazonTotalBeforeTax}`)
+      //3n
+      amazonTax = Math.round((2*2095 + 2*799 + 2*499)*0.1)/ 100
+      console.log(`Estimated tax (10%): $${amazonTax}`)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>6e - Booleans & If statements</title>
+  </head>
+  <body>
+    <script>
+      //6a & 6b & 6c
+      const hour = 13
+      const name = "Akela"
+      if (hour >= 6 && hour <= 12){
+        console.log(`Good morning ${name}`);
+      }else if (hour >= 13 && hour <= 17){
+        console.log(`Good afternoon ${name}`)
+      }else{
+        console.log(`Good night ${name}`)
+      }
+      //6d & 6e
+      const age = 65;
+      const isHoliday = true;
+
+      if ((age <= 6 || age >=65) && !isHoliday ){
+        console.log("Discount")
+      }else{
+        console.log("No discount")
+      }
+      //6f & 6g & 6h
+      const randomNum = Math.random()
+      console.log("RN: " + randomNum)
+      let result = "";
+
+      if(randomNum < 0.5){
+        result = "heads";
+      }else{
+        result = "tails";
+      }
+      //6i
+      const guess= "tails";
+      if (guess === result){
+        console.log("you win")
+      }else{
+        console.log("you lose")
+      }
+      //6j
+      console.log(guess === result ? "you win" : "you lose")
+      //6k & 6l will be on 05-cartQuant
+    </script>
+  </body>
+</html>
