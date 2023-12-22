@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>7e - Functions</title>
+  </head>
+  <body>
+    <script>
+      //7a & 7b & 7c
+      function greet(name){
+        if(name != undefined){
+          console.log(`Hello ${name}!`)
+        }else{
+          console.log("Hi there!")
+        }
+      }
+      greet("Akela");
+      greet("Cody");
+      greet("Chris");
+      greet();
+      //7d
+      function convertToFahrenheit(celsius){
+        const fahrenheit = (celsius * 9 / 5) + 32;
+        return console.log(fahrenheit);
+      }
+      convertToFahrenheit(25);
+      //7e
+      function convertToCelsius(fahrenheit){
+        const celsius = (fahrenheit - 32) * 5 / 9;
+        return console.log(celsius);
+      }
+      convertToCelsius(86);
+      //7f
+      function convertTemperature(degrees, unit){
+        if (unit === 'C' || unit === 'c'){
+          convertToFahrenheit(degrees)
+        }else if(unit === 'F' ||  unit === 'f'){
+          convertToCelsius(degrees)
+        }else{
+          return console.log("Invalid inputs")
+        }
+      }
+      convertTemperature(25, "C");
+      convertTemperature(25, "c");
+      convertTemperature(86, "F");
+      convertTemperature(86, "f");
+      convertTemperature(86, "p");
+      //7g -- in 07e-functionsCal.html
+      //7h & 7i -- in 07e-functionsCartQuant.html
+    </script>
+  </body>
+</html>

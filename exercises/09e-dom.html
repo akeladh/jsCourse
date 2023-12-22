@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> 9e - DOM</title>
+  </head>
+  <body>
+    <button>9a</button>
+    <button class="js-9bButton">9b</button>
+  
+    <div>------------------------------------------</div>
+    <div>
+      <!--9c-->
+    <button onclick="
+      youSelected('Heads');
+    ">heads</button>
+    <button onclick="
+      youSelected('Tails');
+    ">tails</button>
+    <p class="youChose"></p>
+  </div>
+
+  <div>------------------------------------------</div>
+  <div>
+    <!--9d-->
+    <input class="text-input">
+    <button class="submit-button" onclick="
+      const textElement = document.querySelector('.text-input')
+      document.querySelector('.text-message').innerHTML = `You're name is ${textElement.value}`
+    ">Submit</button>
+    <p class="text-message"></p>
+  </div>
+
+  <div>------------------------------------------</div>
+  <div>
+    <!--9e-->
+    <input class="text-input2" onkeydown="
+      if (event.key === 'Enter'){
+        const textElement2 = document.querySelector('.text-input2')
+        document.querySelector('.text-message2').innerHTML = `You're name is ${textElement2.value}`
+      }
+    ">
+    <button class="submit-button" onclick="
+      const textElement2 = document.querySelector('.text-input2')
+      document.querySelector('.text-message2').innerHTML = `You're name is ${textElement2.value}`
+    ">Submit</button>
+    <p class="text-message2"></p>
+  </div>
+
+  <div>------------------------------------------</div>
+  <div>
+    <!--9e-->
+    <input class="text-input3" onkeydown="
+      if (event.key === 'Enter'){
+        textMessage();
+      }
+    ">
+    <button class="submit-button3" onclick="textMessage();">Submit</button>
+    <p class="text-message3"></p>
+  </div>
+
+  <div>------------------------------------------</div>
+    <!--9g-->
+    <p>Orders under $40 =+$10 shipping</p>
+    <p>Orders over $40 = FREE SHIPPING</p>
+    <input placeholder="Cost of Order" class="js-cost-input" onkeydown="handleCostKeydown(event);">
+    <button onclick="calculateTotal();">Calculate</button>
+    <p class="js-total-cost"></p>
+    <div>------------------------------------------</div>
+    <!--9h-->
+    <input placeholder="type something here" class="js-text-input" onkeyup="displayOnPage();">
+    <p class="text-input-results"></p>
+
+
+
+    <script>
+      //9a
+      console.log(document.querySelector('button'))
+      //9b
+      document.querySelector('.js-9bButton').innerHTML = "9b done!";
+      //9c 
+      function youSelected(guess){
+        document.querySelector('.youChose').innerHTML = `You chose: ${guess}`
+      }
+      //9d - above
+      //9e - above
+      //9f
+      function textMessage(){
+        const textElement3 = document.querySelector('.text-input3')
+        document.querySelector('.text-message3').innerHTML = `You're name is ${textElement3.value}`
+      }
+      //9g
+      function calculateTotal(){
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value)*100;
+
+        if (cost < 4000){
+          cost += 1000;
+        }
+
+        document.querySelector('.js-total-cost').innerHTML = `$${cost/100}`;
+     }
+     function handleCostKeydown(event){
+      if (event.key === 'Enter'){
+        calculateTotal();
+      }
+     }
+     //9h
+     function displayOnPage(){
+        const inputElement = document.querySelector('.js-text-input').value;
+        
+        document.querySelector('.text-input-results').innerHTML = inputElement;
+     }
+     //9i & 9j will be on 09e-domProjs.html
+
+    </script>
+  </body>
+</html>

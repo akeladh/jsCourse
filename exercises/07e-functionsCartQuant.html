@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>7e - Cart Quantity w/ Functions</title>
+    <style></style>
+  </head>
+  <body>
+    <button onclick="
+        console.log(`Cart Quanity: ${cartQuant}`);
+      "
+    >
+      Show Quantity
+    </button>
+
+    <button onclick="
+      updateCartQuantity(1);
+    ">Add to Cart
+    </button>
+
+    <button onclick="
+      updateCartQuantity(2);
+    ">+2</button>
+
+    <button onclick="
+      updateCartQuantity(3);
+    ">+3</button>
+
+    <button onclick="
+      updateCartQuantity(4);
+    ">+4</button>
+
+    <button onclick="
+      updateCartQuantity(5);
+      ">+5</button>
+
+    <button onclick="
+      updateCartQuantity(-2);
+      ">-2</button>
+
+    <button onclick="
+      updateCartQuantity(-3);
+      ">-3</button>
+
+    <button onclick="
+        updateCartQuantity(-1);
+      ">Remove from cart</button>
+
+    <button onclick="
+      cartQuant=0;
+      console.log('Cart was reset.')
+      console.log(`Cart Quanity: ${cartQuant}`);
+      "
+    >Reset Cart</button>
+
+    <script>
+      let cartQuant = 0;
+
+      function updateCartQuantity(value){
+        if(cartQuant + value < 0){
+          alert('No enough items in cart');
+          return;
+        }
+        if(cartQuant + value > 10){
+          alert('Cart is full');
+          return;
+        }
+        cartQuant += value;
+        console.log(`Cart Quanity: ${cartQuant}`)
+      }
+    </script>
+  </body>
+</html>

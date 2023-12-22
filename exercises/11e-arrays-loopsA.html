@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11e Arrays and Loops</title>
+  </head>
+  <body>
+    <script>
+      //11a
+      const nums = [10,20,30];
+      nums[2] = 99;
+      console.log(nums);
+      //11b
+      function getLastValue(array){
+        const lastValue = array[array.length-1]
+        return lastValue
+      }
+      console.log(getLastValue([1,29,22,24,5]));
+      console.log(getLastValue(['hi','bye','good']));
+      //11c
+      function arraySwap(array){
+        const lastIndex = array.length-1;
+        const firstVal = array[0];
+        const lastVal = array[lastIndex];
+        
+        array[0] = lastVal;
+        array[lastIndex] = firstVal;
+
+        return array
+      }
+      console.log(arraySwap([1,29,22,24,5]));
+      console.log(arraySwap(['hi','bye','good']));
+      //11d
+      for (let i = 0; i <= 10; i+=2){
+        const double = i;
+        console.log(double);
+      }
+      //11e
+      for (let i = 5; i >= 0; i--){
+        console.log(i);
+      }
+      //11f
+      let i = 0;
+      while (i <= 10){
+        console.log(i);
+        i += 2;
+      }
+      let j = 5;
+      while(j >= 0){
+        console.log(j);
+        j--;
+      }
+      //11g
+      const parentArray = [1,2,3];
+      const newArray = [];
+      for (let i=0; i < parentArray.length; i++){
+        const value = parentArray[i];
+        newArray.push(value+1);
+      }
+      console.log(newArray);
+      //11h
+      function addOne(array){
+        for (let i = 0; i < array.length; i++){
+          let value = array[i];
+          array[i] = value+1;
+        }
+        return array
+      }
+      console.log(addOne([2,3,4]));
+      console.log(addOne([-2,-1,0]));
+      //11i
+      function addNum(array, num){
+        for (let i =0; i < array.length;i++){
+          let value = array[i];
+          array[i] = value + num;
+        }
+        return array
+      }
+      console.log(addNum([1,2,3], 2))
+      console.log(addNum([10,-20,30], 3))
+      //11j
+      function addArrays(array1, array2){
+        const resultArray = []
+
+        for (let i = 0; i < array1.length && i < array2.length; i++){
+          resultArray.push(array1[i] + array2[i]);
+        }
+        return resultArray;
+      }
+      console.log(addArrays([1,2,2],[2,2,3]));
+      console.log(addArrays([-1,11,22],[2,2,3]));
+      //11k
+      function countPositive(nums){
+        let count = 0;
+        for (let i = 0; i < nums.length; i++){
+          if (nums[i] > 0){
+            count++;
+          }
+        }
+        return count;
+      }
+      console.log(countPositive([1,-3,5]));
+      console.log(countPositive([-2,3,-5,7,10]));
+      //11l
+      function minMax(nums){
+        let min = nums[0];
+        let max = nums[0];
+        for (let i = 1; i < nums.length; i++){
+          if (nums[i] < min){
+            min = nums[i];
+          }else if (nums[i] > max){
+            max = nums[i];
+          }
+        }
+        return {min, max}
+      }
+      console.log(minMax([-2,3,-5,7,10]));
+      //11m
+      function minMax(nums){
+        if (nums.length <= 0){
+          return {min: null, max:null};
+        }else{
+        let min = nums[0];
+        let max = nums[0];
+        for (let i = 0; i < nums.length; i++){
+          if (nums[i] < min){
+            min = nums[i];
+          }else if (nums[i] > max){
+            max = nums[i];
+          }
+        }
+        return {min, max}
+      }
+      }
+      console.log(minMax([]));
+      console.log(minMax([3]));
+      //11n
+      function countWords(words){
+        const result = {};
+        for (let i = 0; i < words.length; i++){
+          const word = words[i];
+          // result[word] adds/accesses a property using whatever is
+          // saved inside the 'word' variable.
+          // If word = 'apple', result[word] will do result['apple']
+          // If word = 'grape', result[word] will do result['grape']
+          if (!result[word]){
+            result[word] = 1;
+          }else{
+            result[word]++;
+          }
+        }
+        return result
+      }
+      console.log(countWords(['apple','grape','apple','grape', 'grape']))
+    </script>
+  </body>
+</html>

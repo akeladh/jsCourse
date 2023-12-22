@@ -1,0 +1,83 @@
+ /*10a*/
+ .amazon-button{
+  background-color: rgb(255,216,20);
+  width: 200px;
+  height: 40px;
+  border-radius: 90px;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+/*10b*/
+.uber-request-button{
+  margin-right: 20px;
+  background-color: black;
+  color: white;
+  padding: 16px 28px;
+  font-weight: bold;
+  font-size: 16px;
+  border:none;
+  border-radius: 8px;
+}
+.uber-schedule-button{
+  background-color: rgb(230, 230, 230);
+  color: black;
+  padding: 16px 28px;
+  font-weight: bold;
+  font-size: 16px;
+  border:none;
+  border-radius: 8px;
+}
+
+/*10f*/
+.toggle-button-f{
+  padding: 12px 25px;
+  border: none;
+  font-size: 20px;
+  border-radius: 8px;
+}
+.is-toggle-f{
+  background-color: black;
+  color: white;
+}
+/*10g*/
+.toggle-button{
+  padding: 12px 25px;
+  border: none;
+  font-size: 20px;
+  border-radius: 8px;
+}
+.is-toggled{
+  background-color: black;
+  color: white;
+}
+/*10h*/
+.red-font{
+  color: red;
+}
+/*10i*/
+.calculator-button{
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  font-size: 26px;
+}
+.gray-button{
+  background-color: rgb(51,51,51);
+  color: white;
+}
+.clear-button {
+  font-size: 17px;
+}
+.orange-button{
+  background-color: rgb(254, 160, 10);
+  color: white;
+}
+.calculator-total{
+  font-size: 26px;
+  font-family: Arial;
+  margin-left: 10px;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>10e - HTML CSS JS Together</title>
+    <link rel="stylesheet" href="10e-html-css-js.css">
+  </head>
+  <body>
+    <!--10a-->
+    <button class="amazon-button">Add to Cart</button>
+    <p>------------------------------------------</p>
+    <!--10b-->
+    <button class="uber-request-button">Request now</button>
+    <button class="uber-schedule-button">Schedule for later</button>
+    <p>------------------------------------------</p>
+    <!--10c-->
+    <button class="js-button">Test</button>
+    <p>------------------------------------------</p>
+    <!--10d-->
+    <button class="toggle-button" onclick="
+      const gameButtomElement = document.querySelector('.toggle-button');
+      if (!gameButtomElement.classList.contains('is-toggle')){
+        gameButtomElement.classList.add('is-toggle')
+      }else{
+        gameButtomElement.classList.remove('is-toggle')
+      }
+    ">Gaming</button>
+    <p>------------------------------------------</p>
+    <!--10e-->
+    <p>10e</p>
+    <button class="js-gaming-button toggle-button" onclick="
+      const gameButtomElement2 = document.querySelector('.js-gaming-button');
+      if (!gameButtomElement2.classList.contains('is-toggle')){
+        gameButtomElement2.classList.add('is-toggle')
+      }else{
+        gameButtomElement2.classList.remove('is-toggle')
+      }
+    ">Gaming</button>
+    <button class="js-music-button toggle-button" onclick="
+      const musicButtomElement = document.querySelector('.js-music-button');
+      if (!musicButtomElement.classList.contains('is-toggle')){
+        musicButtomElement.classList.add('is-toggle')
+      }else{
+        musicButtomElement.classList.remove('is-toggle')
+      }
+    ">Music</button>
+    <button class="js-tech-button toggle-button" onclick="
+      const techButtomElement = document.querySelector('.js-tech-button');
+      if (!techButtomElement.classList.contains('is-toggle')){
+        techButtomElement.classList.add('is-toggle')
+      }else{
+        techButtomElement.classList.remove('is-toggle')
+      }
+    ">Tech</button>
+    <p>------------------------------------------</p>
+    <!--10f-->
+    <p>10f</p>
+    <button class="js-gaming-button3 toggle-button" onclick="toggle('.js-gaming-button3')">Gaming</button>
+    <button class="js-music-button2 toggle-button" onclick="toggle('.js-music-button2')">Music</button>
+    <button class="js-tech-button2 toggle-button" onclick="toggle('.js-tech-button2')">Tech</button>
+    <p>------------------------------------------</p>
+    <!--10g-->
+    <p>10g</p>
+    <button class="toggle-button js-buttonG" onclick="
+      toggleButtonG('.js-buttonG');
+    ">Gaming</button>
+
+    <button class="toggle-button js-buttonG-2" onclick="
+      toggleButtonG('.js-buttonG-2');
+    ">Music</button>
+
+    <button class="toggle-button js-buttonG-3" onclick="
+      toggleButtonG('.js-buttonG-3');
+    ">Tech</button>
+    <p>------------------------------------------</p>
+    <!--10h-->
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 =+$10 shipping</p>
+    <p>Orders over $40 = FREE SHIPPING</p>
+    <input placeholder="Cost of Order" class="js-cost-input cost-input" onkeydown="handleCostKeydown(event);">
+    <button onclick="calculateTotal();" class="calculate-button">Calculate</button>
+    <p class="js-total-cost"></p>
+    <p>------------------------------------------</p>
+    <!--10i&j-->
+    <p class="js-calculation calculator-total"></p>
+    <p>
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('1');
+      ">1</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('2');
+      ">2</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('3');
+      ">3</button>
+
+      <button class="calculator-button orange-button" onclick="
+        updateCalculation(' + ');
+      ">+</button>
+    </p>
+
+    <p>
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('4');
+      ">4</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('5');
+      ">5</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('6');
+      ">6</button>
+
+      <button class="calculator-button orange-button" onclick="
+        updateCalculation(' - ');
+      ">-</button>
+    </p>
+
+    <p>
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('7');
+      ">7</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('8');
+      ">8</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('9');
+      ">9</button>
+
+      <button class="calculator-button orange-button" onclick="
+        updateCalculation(' * ');
+      ">*</button>
+    </p>
+
+    <p>
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('0');
+      ">0</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('.');
+      ">.</button>
+
+      <button class="calculator-button gray-button" onclick="
+        calculation = eval(calculation);
+        displayCalculation();
+        localStorage.setItem('calculation', calculation);
+      ">=</button>
+
+      <button class="calculator-button orange-button" onclick="
+        updateCalculation(' / ');
+      ">/</button>
+    </p>
+
+    <p>
+      <button class="calculator-button clear-button gray-button" onclick="
+        calculation = '';
+        displayCalculation();
+        localStorage.setItem('calculation', calculation);
+      ">Clear</button>
+    </p>
+
+
+
+
+    <script>
+      //10c
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement.classList.contains('js-button'));
+    </script>
+    <!--10f-->
+    <script src="10e-html-css-js10f.js"></script>
+    <!--10g-->
+    <script src="10e-html-css-js10g.js"></script>
+    <!--10h-->
+    <script src="10e-html-css-js10h.js"></script>
+    <!--10i&j-->
+    <script src="10e-html-css-js10i.js"></script>
+  </body>
+</html>
