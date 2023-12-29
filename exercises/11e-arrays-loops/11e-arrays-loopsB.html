@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11e Arrays and Loops PT2</title>
+    <link rel="stylesheet" href="11e-arrays-loopsX.css">
+  </head>
+  <body>
+    <script>
+      //11o
+      function searchLocator(array){
+        let index = -1;
+        for (let i = 0; i < array.length; i++){
+          if (array[i] === 'search'){
+            index = i;
+          }
+        }
+        console.log(index);
+      }
+     searchLocator(['hello','world', 'search','good'])
+     searchLocator(['not','found'])
+     //11p
+     function searchLocator(array){
+        let index = -1;
+        for (let i = 0; i < array.length; i++){
+          if (array[i] === 'search'){
+            index = i;
+            break;
+          }
+        }
+        console.log(index);
+      }
+     searchLocator(['hello','world', 'search','good','search'])
+     //11q 
+     function findIndex(array,word){
+        let index = -1
+        for(let i = 0; i < array.length; i++){
+          if (array[i]===word){
+            index = i;
+            break;
+          }
+        }
+        console.log(index);
+     }
+     findIndex(['green','red','blue', 'red'], 'red')
+     findIndex(['green','red','blue', 'red'], 'yellow')
+     //11r
+     function removeEgg(foods){
+      let result = []
+      for(let i=0; i < foods.length; i++){
+        if (foods[i]=== 'egg'){
+          continue;
+        }
+        result.push(foods[i]);
+      }
+      return result;
+     }
+     console.log(removeEgg(['egg','apple','egg','egg','ham','pizza']))
+     //11s
+     function removeEgg2(foods){
+      let result = []
+      let count = 0;
+      for(let i=0; i < foods.length; i++){
+        if (foods[i]=== 'egg' && count < 2){
+          count++;
+          continue;
+        }
+        result.push(foods[i]);
+      }
+      return result;
+     }
+     console.log(removeEgg2(['egg','apple','egg','egg','ham','pizza']))
+     //11t
+     function removeEgg3(foods){
+      let result = [];
+      let count = 0;
+      const backwardsArray = foods.reverse()
+      for(let i=0; i < backwardsArray.length; i++){
+        if (backwardsArray[i]=== 'egg' && count < 2){
+          count++;
+          continue;
+        }
+        result.push(backwardsArray[i]);
+      }
+      return result.reverse();
+     }
+     console.log(removeEgg3(['egg','apple','egg','egg','ham','pizza']))
+     //11u
+     function removeEgg4(foods){
+      let result = [];
+      let count = 0;
+      const backwardsArray = foods.slice().reverse()
+      for(let i=0; i < backwardsArray.length; i++){
+        if (backwardsArray[i]=== 'egg' && count < 2){
+          count++;
+          continue;
+        }
+        result.push(backwardsArray[i]);
+      }
+      console.log(result.reverse())
+      console.log(foods);
+
+     }
+     removeEgg4(['egg','apple','egg','egg','ham','pizza'])
+     //11v
+     for (let i = 1; i <= 20; i++){
+      if (i % 3 === 0 && i % 5 === 0) {
+          console.log('FizzBuzz');
+
+        } else if (i % 3 === 0) {
+          console.log('Fizz');
+
+        } else if (i % 5 === 0) {
+          console.log('Buzz');
+          
+        } else {
+          console.log(i);
+        }
+     }
+     //11w
+     function findIndex2(array,word){
+        for(let i = 0; i < array.length; i++){
+          if (array[i]===word){
+            return i
+          }
+        }
+        return -1
+     }
+     console.log(findIndex2(['green','red','blue', 'red'], 'red'))
+     console.log(findIndex2(['green','red','blue', 'red'], 'yellow'))
+     function unique(array){
+        const result = []
+        for(let i = 0; i < array.length; i++){
+          const word = array[i];
+          if (findIndex2(result, word) === -1){
+            result.push(word);
+          }
+        }
+        return result
+     }
+     console.log(unique(['green', 'red', 'blue', 'red']));
+     console.log(unique(['red', 'green', 'green', 'red']));
+    </script>
+    <!--11x-->
+    <p>Todo List</p>
+
+    <div class="input-grid">
+      <input placeholder="Todo name"
+        class="js-name-input name-input">
+      <input type="date"
+        class = "js-due-date-input dueDate-input"
+      >
+      <button onclick="
+        addTodo();
+      " class="add-todo-button">Add</button>
+     </div>
+    <div class="js-todo-list todo-grid"></div>
+    <script src="11e-arrays-loopsX.js"></script>
+  </body>
+</html>

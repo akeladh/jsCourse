@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>12e Advanced Functions</title>
+  </head>
+  <body>
+    <!--12c-->
+    <button class="js-timerButton">Start</button>
+    <p>------------------------------------------</p>
+    <!--12d-->
+    <button class="js-timerButton2" onclick="buttonTimer2();">Start</button>
+    <p>------------------------------------------</p>
+    <!--12e-->
+    <button class="js-addCartButton" onclick="addToCart();">Add to Cart</button>
+    <p class="js-addCartPara"></p>
+    <p>------------------------------------------</p>
+    <!--12f-->
+    <button class="js-addCartButton2" onclick="addToCart2();">Add to Cart</button>
+    <p class="js-addCartPara2"></p>
+    <p>------------------------------------------</p>
+    <!--12h-->
+    <button class="js-addButton" onclick="messages++;">Add</button>
+    <button class="js-removeButton" onclick="messages--;">Remove</button>
+    <p>------------------------------------------</p>
+    <!--12i-->
+    <button class="js-addButton" onclick="
+      messages2++;  
+      displayNotification();
+    ">Add</button>
+
+    <button class="js-removeButton" onclick=" 
+      if (messages > 0) {
+      messages--;
+      if (messages === 0) {
+        stopNotification();
+      }
+    }">Remove</button>
+
+
+    <script>
+      //12a
+      const add = ()=>{console.log(2+3);}
+      add();
+      add();
+      //12b
+      function runTwice(fun){
+        fun();
+        fun();
+      }
+      runTwice(function(){console.log('12b')});
+      runTwice(add);
+      //12c
+      // function buttonTimer(){
+      //   setTimeout(()=>{document.querySelector('.js-timerButton').innerHTML = 'Finished';}, 1000)
+      // }
+      document.querySelector('.js-timerButton').addEventListener('click', ()=>{
+        setTimeout(()=>{document.querySelector('.js-timerButton').innerHTML = 'Finished';}, 1000)
+      })
+
+      //12d
+      function buttonTimer2(){
+        document.querySelector('.js-timerButton2').innerHTML = 'Loading...';
+        setTimeout(()=>{document.querySelector('.js-timerButton2').innerHTML = 'Finished';}, 1000)
+      }
+      //12e
+      function addToCart(){
+        const addCartParaElement = document.querySelector('.js-addCartPara');
+        addCartParaElement.innerHTML = 'Added';
+        setTimeout(()=>{addCartParaElement.innerHTML = '';} , 2000)
+      }
+      //12f
+      let timeId;
+      function addToCart2(){
+        const addCartParaElement = document.querySelector('.js-addCartPara2');
+        addCartParaElement.innerHTML = 'Added';
+
+        clearTimeout(timeId);
+
+        timeId = setTimeout(()=>{
+          addCartParaElement.innerHTML = '';} , 2000)
+      }
+      //12g
+      function titleChange(){
+        setInterval(()=>{
+          if (document.title != 'hi'){
+             document.title = 'hi' 
+          }else{
+            document.title = 'byes'
+          }
+        }, 1000);
+      }
+      //titleChange();
+      //12h
+      let messages = 2;
+      function titleChange2(){
+        setInterval(()=>{
+          if (document.title != `(${messages}) New Messages`){
+             document.title = `(${messages}) New Messages`
+          }else{
+            document.title = 'byes'
+          }
+        }, 1000);
+      }
+      //titleChange2();
+      //12i
+      let messages2 = 2;
+      let intervalId;
+
+      // We'll use this variable to keep track of whether
+      // or not we're displaying the notification.
+      let isDisplayingNotification;
+      displayNotification();
+
+      function displayNotification() {
+        if (isDisplayingNotification) {
+          return;
+        }
+        isDisplayingNotification = true;
+        intervalId = setInterval(() =>{
+          if (document.title === 'App') {
+            document.title = `(${messages}) New messages`;
+          } else {
+            document.title = 'App';
+          }
+        }, 1000);
+      }
+
+      function stopNotification() {
+        isDisplayingNotification = false;
+        clearInterval(intervalId);
+        document.title = 'App';
+      }
+    </script>
+  </body>
+</html>
